@@ -1,0 +1,1474 @@
+/* font */
+@font-face {
+  font-family: 'BauerBodoniStd-Black.woff';
+  src: url('/fonts/BauerBodoniStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BauerBodoniStd-BlackItalic.woff';
+  src: url('/fonts/BauerBodoniStd-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'BodoniStd-Bold.woff';
+  src: url('/fonts/BodoniStd-Bold.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BodoniStd-BoldCondensed.woff';
+  src: url('/fonts/BodoniStd-BoldCondensed.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Custom Reset: Reset + Normalize 조합 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 기본적인 스타일 유지 */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  text-rendering: optimizeSpeed;
+  font-family: 'Noto Sans KR', serif;
+  color: #222222;
+}
+
+/* 이미지, 비디오 반응형 */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 폼 요소 기본 스타일 유지 */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 리스트 기본 스타일 제거 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 링크 스타일 초기화 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video,
+iframe {
+  vertical-align: middle;
+}
+
+/*---------------------------------------------------밑부터는 디자인 css-------------------------------------------------------*/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* 기본 스크롤 제거 */
+}
+
+#wrap {
+  height: 100%;
+  scroll-snap-type: y mandatory; /* 세로(y) 방향으로 스냅 */
+  overflow-y: scroll; /* 세로 스크롤 가능하게 설정 */
+  height: 100vh;
+}
+
+#wrap #page {
+  width: 100%;
+  height: 100vh; /* 화면 크기만큼 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  scroll-snap-align: start; /* 시작 부분에서 스냅 */
+}
+#nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#nav > ul {
+  display: flex;
+  border-bottom: #ffffff solid 1px;
+}
+
+#nav > ul > li {
+  font-size: 1.2rem;
+  font-weight: 100;
+  width: 33.3%;
+  text-align: center;
+  line-height: 60px;
+}
+
+#nav > ul > li:hover {
+  text-shadow: 0px 0px 5px #ffffff;
+}
+#whitetext {
+  color: #ffffff;
+}
+/*------------------page1--------------------*/
+.page1 {
+  background: linear-gradient(to bottom, #e2dbe2, #ffffff);
+  overflow: hidden;
+  position: relative;
+}
+
+#whitebox {
+  width: 50%;
+  height: 85vh;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 15vh;
+  transform: translateX(-50%);
+  padding: 2% 3%;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.S_text {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.S_text > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.S_text > ul > li {
+  font-size: 0.9rem;
+  padding-left: 30px;
+}
+
+.S_text > ul > li:last-child {
+  padding-right: 0;
+}
+
+.B_text {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 4.5vw;
+  font-weight: 800;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.B_text > p {
+  line-height: 5rem;
+}
+
+.boxs {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.boxs > ol {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.boxs > ol > li {
+  width: 31%;
+  height: 20vh;
+  background-color: #e2dbe2;
+  margin-bottom: 3.5%;
+}
+.boxs > ol > li:first-child {
+  position: relative;
+  width: 100%;
+  font-family: 'BauerBodoniStd-BlackItalic.woff', serif;
+  font-weight: 900;
+  font-size: 4rem;
+  color: transparent; /* 처음에는 글자 숨김 */
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.boxs > ol > li:first-child > p {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.boxs > ol > li:first-child,
+.boxs > ol > li:last-child {
+  margin-right: 0;
+}
+
+/* by줄넘김 */
+.mobile-br {
+  display: none;
+}
+
+/* #name {
+  position: absolute;
+  bottom: 3vh;
+  left: 3vh;
+}
+
+#name > img {
+  display: block;
+}
+
+#name > img:first-child {
+  padding-bottom: 5%;
+} */
+
+#finger1 {
+  width: 28vh;
+  max-width: 300px;
+  position: absolute;
+  right: 5%;
+  top: 60%;
+  transform: translateY(-50%);
+  transition: transform 1.2s ease-in-out;
+}
+
+#finger1 img {
+  width: 100%;
+  height: auto;
+}
+
+/*----------------------page2--------------------*/
+
+.page2 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Introduction {
+  position: absolute;
+  left: 0%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#Introduction > div > img {
+  max-width: 380px;
+  height: auto;
+}
+
+#Introduction > div > img:first-child {
+  max-width: 320px;
+}
+#Introduction > div > p {
+  max-width: 380px;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-top: 4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  line-height: 2.5rem;
+}
+
+#Introduction > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+#Profile {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  width: 50%;
+}
+
+#Profile_inner {
+  background-color: #ffffff;
+  width: 85%;
+  height: 60%;
+  padding: 3rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#Profile_inner > div {
+  width: 48%;
+  height: 30%;
+  margin-bottom: 2.5rem;
+}
+
+#Profile_inner > div:last-child {
+  width: 100%;
+}
+#Profile_inner > h2 {
+  font-family: 'BauerBodoniStd-Black.woff';
+  margin-bottom: 2rem;
+  line-height: 3.5rem;
+  font-size: 3.5rem;
+}
+
+.textbox {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: #9dabb6;
+  margin-bottom: 1rem;
+}
+
+.graytext {
+  color: #bbbbbb;
+}
+
+#aboutme > div > ul > li:nth-child(2) > ul {
+  display: flex;
+}
+
+#aboutme > div > ul > li:nth-child(2) > ul > li:last-child {
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+
+#Profile_inner > div > :last-child {
+  width: 100%;
+}
+#Profile_inner > div > :last-child > img {
+  max-width: 3.6rem;
+  height: auto;
+}
+
+#Profile > #Profile_inner > h2 {
+  display: block;
+  width: 100%;
+}
+#license > ul > li:nth-child(2) {
+  display: flex;
+}
+
+#license > ul > li:nth-child(2) > ul:nth-child(2) {
+  margin-left: 1.5rem;
+}
+
+#skill {
+  width: 100%;
+}
+#skill > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page2 > #nav > ul > li:first-child > a {
+  text-shadow: 0px 0px 5px #ffffff;
+  font-weight: 400;
+}
+
+/*-------------------page3-------------------------*/
+
+.page3 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#page3_inner {
+  width: 60%;
+}
+#page3_inner > h2 {
+  font-family: 'BodoniStd-Bold.woff';
+  text-decoration: underline;
+  position: absolute;
+  left: 12%;
+  top: 10.5%;
+  font-size: 3.6rem;
+}
+#Project {
+  width: 100%;
+  max-width: 1200px;
+
+  background-color: #ffffff;
+  height: 74vh;
+  border-radius: 0.5rem;
+  padding: 4rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  /* flex-direction: row;
+  align-items: center; */
+  margin-bottom: -7%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.Project_content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  /* flex-direction: row;
+  align-items: center; */
+}
+
+#content_image {
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+#content_text > h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 0.4rem;
+}
+#content_text > h2 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  padding-bottom: 1.4rem;
+}
+#content_text > .content_text_t {
+  display: flex;
+  padding-bottom: 1.4rem;
+}
+#content_text > .content_text_t > li:first-child {
+  width: 16%;
+}
+#content_text > .content_text_t > li:last-child {
+  width: 84%;
+}
+#content_text > .content_text_t > li > p {
+  font-size: 0.95rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+#content_text > p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+#content_text > #font_regular {
+  color: #7e7e7e;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+  padding-bottom: 2rem;
+}
+
+#content_text > .links {
+  display: flex;
+  padding-top: 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0rem;
+}
+
+#content_text > .links > li > a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid #000000;
+  background-color: #e2dbe2;
+  border-radius: 0.5rem;
+}
+#content_text > .links > li {
+  margin-right: 1rem;
+}
+.page3 > #nav > ul > li:nth-child(2) > a {
+  text-shadow: 0px 0px 5px #ffffff;
+  font-weight: 400;
+}
+
+/* #Project > .content2 {
+  display: none;
+} */
+/* #Project > .content2 {
+  display: none;
+} */
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* 두 개 슬라이드 */
+}
+/* 버튼 공통 */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: none;
+  color: #e2dbe2; /* 글자 색상 = 화살표 색상 */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 버튼 위치 */
+.prev {
+  top: 53%;
+  left: 15rem;
+}
+
+.next {
+  top: 53%;
+
+  right: 15rem;
+}
+
+/*----------------------page4--------------------*/
+
+.page4 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#page4_inner {
+  width: 60%;
+}
+#page4_inner > h2 {
+  font-family: 'BodoniStd-Bold.woff';
+  text-decoration: underline;
+  position: absolute;
+  left: 12%;
+  top: 10.5%;
+  font-size: 3.6rem;
+}
+
+.page4 > #nav > ul > li:nth-child(2) > a {
+  text-shadow: 0px 0px 5px #ffffff;
+  font-weight: 400;
+}
+
+/*----------------------page5--------------------*/
+
+.page5 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#page5_inner {
+  width: 60%;
+}
+
+.page5 > #nav > ul > li:nth-child(2) > a {
+  text-shadow: 0px 0px 5px #ffffff;
+  font-weight: 400;
+}
+#poster_wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#page5_inner > h2 {
+  font-family: 'BodoniStd-Bold.woff';
+  text-decoration: underline;
+  position: absolute;
+  left: 50%;
+  top: 10.5%;
+  transform: translateX(-50%);
+  font-size: 3.6rem;
+}
+
+#poster {
+  /* width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; */
+
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: scrollPoster 30s linear infinite;
+  align-items: center;
+  margin-top: 5rem;
+  animation-play-state: running; /*기본 재생중임 표시*/
+}
+
+#poster:hover {
+  animation-play-state: paused; /*이미지에 마우스 올렸을때 멈춤*/
+}
+
+#poster > img {
+  flex-shrink: 0;
+  margin-right: 10rem;
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.3);
+}
+
+#poster > .banners {
+  height: 300px; /* 미니배너 */
+  width: auto;
+}
+
+#poster > .posters {
+  height: 500px; /* 포스터 */
+  width: auto;
+}
+
+@keyframes scrollPoster {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-70%);
+  }
+}
+/*--------------------태블릿----------------------*/
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  html {
+    font-size: 15px;
+  }
+
+  /*PAGE1-------------------*/
+
+  #whitebox {
+    width: 60%;
+    height: 85vh;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+  }
+
+  .boxs {
+    margin-top: 1vh;
+  }
+  /*화이트박스 속 헤더 텍스트 크기 조정*/
+  .S_text > ul > li {
+    font-size: 0.7rem;
+    padding: 1rem 1rem;
+  }
+  /*by lee sae yeon 텍스트 크기 조정*/
+  .boxs > ol > li:first-child {
+    font-size: 3rem;
+  }
+
+  /*손그림 크기 조정*/
+  #finger1 {
+    width: min(25vw, 250px);
+    max-width: 300px;
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 1.2s ease-in-out;
+  }
+
+  /*화이트박스 속 포트폴리오 텍스트 크기 조정*/
+  .B_text {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 6vw;
+    font-weight: 800;
+  }
+  .B_text > p {
+    line-height: 4rem;
+  }
+  /*---------------PAGE1*/
+
+  /*PAGE2-------------------*/
+
+  #Introduction {
+    left: 50%;
+    top: 10vh;
+    transform: translateX(-50%);
+  }
+  #Profile {
+    top: 38vh;
+    left: 50%;
+    width: 85%;
+    transform: translateX(-50%);
+  }
+
+  /*배경화이트박스 크기 조정*/
+  #Profile_inner {
+    width: 100%;
+    height: 58vh;
+  }
+  #Introduction > div > img:first-child {
+    max-width: 200px;
+  }
+  #Introduction > div > p {
+    max-width: 380px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-top: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    line-height: 2rem;
+  }
+  .textbox {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+  }
+
+  .subtext {
+    font-size: 1rem;
+    color: #9dabb6;
+    margin-bottom: 0.8rem;
+  }
+  #license > ul > li:nth-child(2) > ul:nth-child(2) {
+    margin-left: 1rem;
+  }
+  #Profile_inner > h2 {
+    font-family: 'BauerBodoniStd-Black.woff';
+    margin-bottom: 1.4rem;
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+  }
+  #Profile_inner > div {
+    width: 49%;
+    height: 30%;
+    margin-bottom: 1rem;
+  }
+  #Profile_inner > div:last-child > h3 {
+    margin-bottom: 1.2rem;
+  }
+
+  /*마지막 div 마진 바텀 조정*/
+  #Profile_inner > div:last-child {
+    height: 20%;
+    margin-bottom: 0rem;
+  }
+
+  #career,
+  #education {
+    width: 40% !important;
+  }
+  #license {
+    width: 57% !important;
+  }
+
+  /*PAGE3-------------------*/
+  /*흰박스 너비,여백,마진바텀 변경*/
+  #Project {
+    height: 80vh;
+    padding: 3rem 3rem;
+    margin-bottom: -10%;
+  }
+
+  .Project_content {
+    width: 100%;
+    flex-wrap: wrap; /*텍스트를 이미지 아랫줄로 넘기기*/
+    display: flex;
+    justify-content: flex-start;
+    /* flex-direction: column;
+    align-items: center; */
+  }
+  #content_image {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 텍스트, 이미지 모두 위 정렬 */
+    padding: 0;
+    margin: 0;
+  }
+  #content_image > img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
+  #content_text {
+    align-items: flex-start; /* 텍스트, 이미지 모두 위 정렬 */
+  }
+
+  /*텍스트크기 조정*/
+  #page3_inner > h2 {
+    font-size: 3.2rem;
+  }
+  #content_text > h5 {
+    font-size: 1rem;
+  }
+  #content_text > h2 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    padding-bottom: 1.2rem;
+  }
+  #content_text > .content_text_t {
+    padding-bottom: 1rem;
+  }
+  #content_text > .content_text_t > li:first-child {
+    width: 16%;
+  }
+  #content_text > .content_text_t > li:last-child {
+    width: 84%;
+  }
+  #content_text > .content_text_t > li > p {
+    font-size: 0.85rem;
+    line-height: 1.6rem;
+  }
+
+  #content_text > p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+
+  #content_text > #font_regular {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    padding-bottom: 1.6rem;
+  }
+
+  #content_text > .links {
+    padding-top: 1.2rem;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0rem;
+  }
+
+  #content_text > .links > li > a {
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.5rem;
+  }
+  #content_text > .links > li {
+    margin-right: 0.9rem;
+  }
+  /* 버튼 공통 */
+  .nav-btn {
+    font-size: 20px;
+  }
+
+  /* 버튼 위치 */
+  .prev {
+    top: 53%;
+    left: 5rem;
+  }
+
+  .next {
+    top: 53%;
+
+    right: 5rem;
+  }
+
+  /*----------------------page4--------------------*/
+
+  #page4_inner > h2 {
+    font-size: 3.2rem;
+  }
+
+  #page4_inner > #Project > .Project_content > #content_image > img {
+    max-width: 70%;
+  }
+
+  #page4_inner > #Project > .Project_content > #content_text > .links {
+    font-size: 0.7rem;
+  }
+
+  /*----------------------------page5-------------------------*/
+  #page5_inner > h2 {
+    font-family: 'BodoniStd-Bold.woff';
+    text-decoration: underline;
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 10.5%; */
+    transform: translateX(-50);
+    text-align: center;
+    font-size: 3.6rem;
+    width: 100%;
+  }
+}
+
+/*nest hub용*/
+@media (min-width: 1024px) and (max-height: 800px) {
+  /*PAGE1-------------------*/
+
+  /* 손그림이 너무 커지지 않도록 */
+  #finger1 {
+    width: min(15vw, 250px);
+    top: 60%;
+    right: 0%;
+  }
+
+  /*nav 텍스트 크기 조절*/
+  #nav > ul > li {
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+  /*화이트박스 속 포트폴리오 텍스트 크기 조정*/
+  .B_text {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 4.5vw;
+    font-weight: 800;
+  }
+  .B_text > p {
+    line-height: 3rem;
+  }
+
+  /*---------------PAGE1*/
+
+  /*PAGE2-------------------*/
+  .page2 {
+    position: relative;
+  }
+  #Introduction {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  #Introduction > div > img:first-child {
+    max-width: 12rem;
+  }
+  #Introduction > div > p {
+    font-size: 1rem;
+  }
+  #Introduction > div:last-child > img {
+    width: 18rem;
+  }
+  #Profile {
+    top: 15vh;
+    position: absolute;
+    left: 45%;
+    width: 52%;
+    transform: none;
+  }
+  #Profile_inner {
+    width: 100%;
+    height: 75vh;
+    padding: 2rem;
+  }
+  #Profile_inner > div {
+    width: 49%;
+    height: 30%;
+    margin-bottom: 0.5rem;
+  }
+  #career,
+  #education {
+    width: 40% !important;
+  }
+  #license {
+    width: 57% !important;
+  }
+  .textbox {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+  }
+
+  .subtext {
+    font-size: 0.8rem;
+    color: #9dabb6;
+    margin-bottom: 0.4rem;
+  }
+  #license > ul > li:nth-child(2) > ul:nth-child(2) {
+    margin-left: 1rem;
+  }
+  #Profile_inner > h2 {
+    font-family: 'BauerBodoniStd-Black.woff';
+    margin-bottom: 1.4rem;
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+  }
+
+  #Profile_inner > div > :last-child > img {
+    max-width: 2.6rem;
+    height: auto;
+  }
+
+  /*PAGE3-------------------*/
+
+  #page3_inner > h2 {
+    font-size: 2.6rem;
+    top: 10%;
+  }
+  .Project_content {
+    flex-wrap: nowrap;
+  }
+  #content_image {
+    max-width: 50%;
+    justify-content: normal;
+  }
+
+  /*텍스트크기 조정*/
+  #content_text > h2 {
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    padding-bottom: 1.2rem;
+  }
+  #content_text > .content_text_t > li > p {
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+  }
+  #content_text > #font_regular {
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  /*링크버튼 크기 및 위치 조정*/
+  #content_text > .links > li > a {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+  }
+  #content_text > .links {
+    padding-top: 1.2rem;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 0rem;
+  }
+
+  /* 버튼 위치 */
+  .prev {
+    top: 53%;
+    left: 10rem;
+  }
+
+  .next {
+    top: 53%;
+
+    right: 10rem;
+  }
+
+  /*----------------------page4--------------------*/
+  #page4_inner > h2 {
+    font-size: 2.6rem;
+    top: 10%;
+  }
+
+  #page4_inner > #Project > .Project_content > #content_text > .links {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  #page4_inner > #Project > .Project_content > #content_text > .links {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    width: 60%;
+    bottom: 1rem;
+  }
+
+  #page4_inner > #Project > .Project_content > #content_text > .links > li {
+    margin-right: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /*------------------page5-----------------*/
+  #page5_inner > h2 {
+    font-size: 2.6rem;
+    top: 10%;
+  }
+  #poster > .posters {
+    height: 400px;
+    width: auto;
+  }
+  #poster > .banners {
+    height: 220px;
+    width: auto;
+  }
+}
+
+/*--------------------모바일----------------------*/
+@media (max-width: 599px) {
+  html {
+    font-size: 12px;
+  }
+
+  /*PAGE1-------------------*/
+  #whitebox {
+    width: 80%;
+    padding: 4% 4%;
+    height: 80%;
+    top: 20%;
+  }
+  .boxs {
+    margin-top: 0; /* margin-top: 2vh; */
+  }
+  /*화이트박스 속 포트폴리오 텍스트 크기 조정*/
+  .B_text {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  .B_text > p {
+    line-height: 5rem;
+  }
+  .boxs {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column; /* 세로로 쌓기 */
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .S_text > ul > li {
+    font-size: 0.8rem;
+    padding-left: 30px;
+  }
+
+  #finger1 {
+    width: 22vh;
+    right: -60%;
+    top: 55%;
+  }
+
+  /* 모바일에서만 by 줄넘김 */
+  .mobile-br {
+    display: inline;
+  }
+
+  /* by lee sae yeon 텍스트 크기 조정 */
+  .boxs > ol > li:first-child {
+    font-size: 2.5rem;
+    height: 20vh;
+    width: 100%; /* 첫 번째 박스는 100% 차지 */
+  }
+
+  .boxs > ol {
+    position: relative;
+  }
+
+  /* 두 번째 박스 */
+  .boxs > ol > li:nth-child(2) {
+    width: 49%; /* 두 번째 박스는 48% 넓이 */
+    height: 20vh; /* 높이 설정 */
+  }
+
+  /* 세 번째, 네 번째 박스 */
+  .boxs > ol > li:nth-child(3),
+  .boxs > ol > li:nth-child(4) {
+    width: 49%; /* 가로로 쌓일 때 넓이 설정 */
+    height: 9.6vh; /* 높이 설정 */
+  }
+
+  .boxs > ol > li:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+  .boxs > ol > li:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  /*---------------PAGE1*/
+
+  /*PAGE2-------------------*/
+
+  #Introduction {
+    position: absolute;
+    left: 50%;
+    top: 12vh;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  /*프로필 이미지 크기*/
+  #Introduction > div > img:first-child {
+    max-width: clamp(
+      9rem,
+      18vw,
+      9rem
+    ); /* 작은 화면 6rem, 뷰포트 기준 18vw, 최대 9rem */
+    margin-right: clamp(0.8rem, 3vw, 1.5rem); /* 가변 여백 */
+  }
+
+  #Introduction > div > p {
+    max-width: clamp(18rem, 40vw, 20rem);
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: clamp(2rem, 3vw, 2rem);
+    margin-bottom: clamp(0.2rem, 1vw, 0.4rem);
+    margin-top: 0;
+  }
+
+  #Introduction > div > img {
+    max-width: clamp(10rem, 50vw, 20rem); /* 작은 화면 10rem, 최대 20rem */
+    height: auto;
+  }
+
+  #Introduction > div:nth-child(2) {
+    text-align: center;
+    width: clamp(12rem, 50vw, 20rem);
+  }
+
+  #Profile {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28vh;
+    width: 90%;
+  }
+
+  #Profile_inner {
+    background-color: #ffffff;
+    width: 100%;
+    height: clamp(50vh, 69vh, 70vh);
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+  }
+
+  #Profile_inner > h2 {
+    margin-bottom: clamp(3rem, 4.5vw, 5rem);
+  }
+
+  #license > ul > li:nth-child(2) {
+    display: block;
+  }
+  #license > ul > li:nth-child(2) > ul:nth-child(2) {
+    margin-left: 0rem;
+  }
+
+  .textbox {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 500;
+  }
+
+  #Profile_inner > div {
+    margin-bottom: 0rem;
+  }
+  .subtext {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    margin-bottom: clamp(0.8rem, 2.5vw, 1rem);
+  }
+  #Profile_inner > div > :last-child > img {
+    max-width: 2.6rem;
+  }
+  #Profile_inner > div {
+    margin-bottom: clamp(1.2rem, 2.2rem, 1.8rem);
+    height: clamp(10vh, 16vh, 30vh);
+  }
+
+  #skill {
+    margin-top: clamp(1.5rem, 2.5vw, 3rem);
+  }
+
+  /*PAGE3-------------------*/
+  /*흰박스 너비,여백,마진바텀 변경*/
+  #Project {
+    height: 75vh;
+    padding: 1.6rem 1.6rem;
+    margin-bottom: -22%;
+  }
+  #page3_inner {
+    width: 70%;
+  }
+
+  .Project_content {
+    width: 100%;
+    flex-wrap: wrap; /*텍스트를 이미지 아랫줄로 넘기기*/
+    display: flex;
+    justify-content: flex-start;
+    /* flex-direction: column;
+    align-items: center; */
+  }
+  #content_image {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 텍스트, 이미지 모두 위 정렬 */
+    padding: 1rem;
+    margin: 0;
+    height: 130px;
+  }
+  #content_image > img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
+  #content_text {
+    align-items: flex-start; /* 텍스트, 이미지 모두 위 정렬 */
+    height: 70%;
+  }
+
+  /*텍스트크기 조정*/
+  #page3_inner > h2 {
+    font-size: 2.2rem;
+    left: 30%;
+    top: 13%;
+    transform: translateX(-50%);
+  }
+  #content_text > h5 {
+    font-size: 0.8rem;
+  }
+  #content_text > h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-bottom: 1rem;
+  }
+  #content_text > .content_text_t {
+    padding-bottom: 0.8rem;
+  }
+  #content_text > .content_text_t > li > p {
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+  }
+
+  #content_text > p {
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+  }
+
+  #content_text > #font_regular {
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+    padding-bottom: 1.4rem;
+  }
+
+  #content_text > .links {
+    padding-top: 1rem;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 0rem;
+  }
+
+  #content_text > .links > li > a {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+  }
+  #content_text > .links > li {
+    margin-right: 0.9rem;
+  }
+  /* 버튼 공통 */
+  .nav-btn {
+    font-size: 16px;
+    width: 26px;
+    height: 26px;
+  }
+
+  /* 버튼 위치 */
+  .prev {
+    top: 53%;
+    left: 1rem;
+  }
+
+  .next {
+    top: 53%;
+
+    right: 1rem;
+  }
+
+  /*----------------------page4--------------------*/
+
+  #page4_inner {
+    width: 70%;
+  }
+  #page4_inner > h2 {
+    font-size: 2.2rem;
+    left: 40%;
+    top: 13%;
+    transform: translateX(-50%);
+    width: 70%;
+    /* text-align: center; */
+    /* line-height: 2.2rem; */
+  }
+  #content_text > .links > li > a {
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.5rem;
+  }
+  #content_text > .links {
+    padding-top: 1rem;
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0rem;
+  }
+
+  /*------------------page5-------------*/
+  #page5_inner > h2 {
+    font-size: 2.2rem;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: 70%;
+    text-align: center;
+    line-height: 2.2rem;
+  }
+
+  #poster > .banners {
+    height: 220px;
+    width: auto;
+  }
+  #poster > .posters {
+    height: 400px;
+    width: auto;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 600px) and (max-height: 720px) {
+  /*---------------PAGE1*/
+  #finger1 {
+    width: 22vh;
+    right: -20%;
+    top: 60%;
+  }
+
+  /*---------------PAGE3*/
+  #content_image {
+    height: 200px;
+  }
+}
